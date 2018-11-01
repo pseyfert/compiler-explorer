@@ -129,10 +129,13 @@ To specify a compilation request as a JSON document, post it as the appropriate
     }
 }
 ``` 
+
 The filters are a JSON object with `true`/`false` values. If not supplied,
  defaults are used. If supplied, the filters are used as-is.
  The `compilerOptions` is used to pass extra arguments to the back end, and is
  probably not useful for most REST users.
+
+To force a cache bypass, set `bypassCache` in the root of the request to `true`.
 
 A text compilation request has the source as the body of the post, and uses
  query parameters to pass the options and filters. Filters are supplied as a
@@ -201,8 +204,12 @@ If JSON is present in the request's `Accept` header, the compilation results
 
 ### Credits
 
-**Compiler Explorer** is maintained by the awesome people listed in the 
+**Compiler Explorer** is maintained by the awesome people listed in the
  [AUTHORS](AUTHORS.md) file.
+
+We would like to thank the contributors listed in the
+ [CONTRIBUTORS](CONTRIBUTORS.md) file, who have helped shape **Compiler Explorer**.
+
 
 We would also like to specially thank these people for their contributions to
  **Compiler Explorer**:
@@ -213,6 +220,7 @@ We would also like to specially thank these people for their contributions to
 - [Marc Poulhiès](https://github.com/dkm)
 - [Andrew Pardoe](https://github.com/AndrewPardoe)
 
-We would like to thank [JetBrains](https://www.jetbrains.com/) for their support and for donating licenses to their excellent products to develop **Compiler Explorer**.
+We would like to thank [JetBrains](https://www.jetbrains.com/) for their support
+ and for donating licenses to their excellent products to develop **Compiler Explorer**.
 
 ![JetBrains](docs/jetbrains.svg)
