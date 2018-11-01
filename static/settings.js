@@ -186,7 +186,7 @@ function setupSettings(root, settings, onChange, langId) {
 
     add(root.find('.newEditorLastLang'), 'newEditorLastLang', true, Checkbox);
 
-    var formats = ["Google", "LLVM", "Mozilla", "Chromium", "WebKit"];
+    var formats = ["ROOT", "Gaudi", "Google", "LLVM", "Mozilla", "Chromium", "WebKit"];
     add(root.find('.formatBase'), 'formatBase', formats[0], Select,
         _.map(formats, function (format) {
             return {label: format, desc: format};
