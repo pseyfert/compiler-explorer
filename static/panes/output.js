@@ -138,6 +138,18 @@ Output.prototype.onCompileResult = function (id, compiler, result) {
             }, this);
         }
     }
+    if (result.iwyuOutput) {
+        this.add("include-what-you-use returned: " + result.iwyuOutput.code);
+        if (result.iwyuOutput.stderr.length || result.iwyuOutput.stdout.length) {
+            _.each(result.iwyuOutput.stderr, function (obj) {
+                this.programOutput(this.normalAnsiToHtml.toHtml(obj.text));
+            }, this);
+
+            _.each(result.iwyuOutput.stdout, function (obj) {
+                this.programOutput(this.errorAnsiToHtml.toHtml(obj.text), "red");
+            }, this);
+        }
+    }
 
     this.updateCompilerName();
 };

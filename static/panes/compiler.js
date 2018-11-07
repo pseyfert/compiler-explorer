@@ -776,6 +776,9 @@ Compiler.prototype.initButtons = function (state) {
     this.filterExecuteButton = this.domRoot.find("[data-bind='execute']");
     this.filterExecuteTitle = this.filterExecuteButton.prop('title');
 
+    this.filterIWYUButton = this.domRoot.find("[data-bind='runIWYU']");
+    this.filterIWYUTitle = this.filterIWYUButton.prop('title');
+
     this.filterLabelsButton = this.domRoot.find("[data-bind='labels']");
     this.filterLabelsTitle = this.filterLabelsButton.prop('title');
 
@@ -842,12 +845,14 @@ Compiler.prototype.updateButtons = function () {
     formatFilterTitle(this.filterBinaryButton, this.filterBinaryTitle);
     this.filterExecuteButton.prop('disabled', !this.compiler.supportsExecute);
     formatFilterTitle(this.filterExecuteButton, this.filterExecuteTitle);
+    formatFilterTitle(this.filterIWYUButton, this.filterIWYUTitle);
     // Disable demangle for compilers where we can't access it
     this.filterDemangleButton.prop('disabled', !this.compiler.supportsDemangle);
     formatFilterTitle(this.filterDemangleButton, this.filterDemangleTitle);
     // Disable any of the options which don't make sense in binary mode.
     var noBinaryFiltersDisabled = !!filters.binary && !this.compiler.supportsFiltersInBinary;
     this.noBinaryFiltersButtons.prop('disabled', noBinaryFiltersDisabled);
+    // TODO: IWYU treatment
 
     this.filterLabelsButton.prop('disabled', this.compiler.disabledFilters.indexOf('labels') !== -1);
     formatFilterTitle(this.filterLabelsButton, this.filterLabelsTitle);
