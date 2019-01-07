@@ -426,6 +426,7 @@ Compiler.prototype.compile = function (bypassCache) {
         _.each(item.path, function (path) {
             options.userArguments += ' ' + includeFlag + path;
         });
+        options.userArguments += ' ' + item.options;
     });
     this.compilerService.expand(this.source).then(_.bind(function (expanded) {
         var request = {
