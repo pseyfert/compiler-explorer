@@ -118,7 +118,7 @@ function setupSettings(root, settings, onChange, subLangId) {
     }
 
     add(root.find('.colourise'), 'colouriseAsm', true, Checkbox);
-    add(root.find('.autoCloseBrackets'), 'autoCloseBrackets', true, Checkbox);
+    add(root.find('.autoCloseBrackets'), 'autoCloseBrackets', false, Checkbox);
     var colourSchemeSelect = root.find('.colourScheme');
     add(colourSchemeSelect, 'colourScheme', colour.schemes[0].name, Select,
         _.map(colour.schemes, function (scheme) {
@@ -131,7 +131,7 @@ function setupSettings(root, settings, onChange, subLangId) {
         settings.compileOnChange = false;
     }
     add(root.find('.compileOnChange'), 'compileOnChange', true, Checkbox);
-    add(root.find('.delay'), 'delayAfterChange', 750, Slider, {
+    add(root.find('.delay'), 'delayAfterChange', 1500, Slider, {
         max: 3000,
         step: 250,
         min: 250,
@@ -206,7 +206,7 @@ function setupSettings(root, settings, onChange, subLangId) {
 
     add(root.find('.newEditorLastLang'), 'newEditorLastLang', true, Checkbox);
 
-    var formats = ["file", "ROOT", "Gaudi", "Google", "LLVM", "Mozilla", "Chromium", "WebKit"];
+    var formats = ["Gaudi", "ROOT", "file", "Google", "LLVM", "Mozilla", "Chromium", "WebKit"];
     add(root.find('.formatBase'), 'formatBase', formats[0], Select,
         _.map(formats, function (format) {
             return {label: format, desc: format};
@@ -219,7 +219,7 @@ function setupSettings(root, settings, onChange, subLangId) {
         onChange(settings);
     }
 
-    add(root.find('.tabWidth'), 'tabWidth', 4, Select,
+    add(root.find('.tabWidth'), 'tabWidth', 2, Select,
         _.map([2, 4, 8], function (size) {
             return {label: size, desc: size};
         })

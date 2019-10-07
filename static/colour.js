@@ -27,8 +27,8 @@ var _ = require('underscore');
 
 // If you want to use an scheme in every theme, set `theme: ['all']`
 var schemes = [
-    {name: 'rainbow', desc: 'Rainbow 1', count: 12, themes: ['default']},
-    {name: 'rainbow2', desc: 'Rainbow 2', count: 12, themes: ['default']},
+    // {name: 'rainbow', desc: 'Rainbow 1', count: 12, themes: ['default']},
+    // {name: 'rainbow2', desc: 'Rainbow 2', count: 12, themes: ['default']},
     {name: 'earth', desc: 'Earth tones (colourblind safe)', count: 9, themes: ['default']},
     {name: 'green-blue', desc: 'Greens and blues (colourblind safe)', count: 4, themes: ['default']},
     {name: 'gray-shade', desc: 'Gray shades', count: 4, themes: ['dark']}
